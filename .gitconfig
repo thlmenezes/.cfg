@@ -1,0 +1,8 @@
+[user]
+	email = thlmenezes@pm.me
+	name = Thales Menezes
+	signingkey = BE051A0C5409AF03
+[pull]
+	rebase = false
+[commit]
+	gpgsign = false
