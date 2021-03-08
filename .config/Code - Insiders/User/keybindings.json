@@ -1,0 +1,50 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+      "key": "ctrl+'",
+      "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+      "key": "ctrl+shift+'",
+      "command": "workbench.action.terminal.new"
+  },
+  {
+      "key": "ctrl+alt+k",
+      "command": "workbench.action.terminal.kill"
+  },
+  {
+      "key": "ctrl+shift+/",
+      "command": "editor.action.blockComment",
+      "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+      "key": "ctrl+alt+z",
+      "command": "workbench.action.toggleZenMode"
+  },
+  {
+      "key": "ctrl+0",
+      "command": "workbench.action.zoomReset"
+  },{
+      "key": "ctrl+r",
+      "command": "workbench.action.reloadWindow",
+      "when": "editorTextFocus"
+  },
+  {
+      "key": "ctrl+shift+;",
+      "command": "workbench.action.splitEditor",
+      "when": "editorTextFocus"
+  },
+  {
+      "key": "ctrl+;",
+      "command": "workbench.action.terminal.split",
+  },
+  {
+      "key": "ctrl+i",
+      "command": "editor.action.formatDocument",
+      "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+      "key": "ctrl+alt+;",
+      "command": "workbench.action.toggleMaximizedPanel"
+  }
+]

@@ -1,0 +1,104 @@
+{
+    //? General
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "explorer.openEditors.visible": 0,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "window.titleBarStyle": "custom",
+    //? Eslint
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "typescript",
+        "typescriptreact"
+    ],
+    //? Prettier
+    //* Format on save & auto-save
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 3000,
+    //* Style
+    "editor.tabSize": 2,
+    //* Languages
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    //? Emmet
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+    },
+    "editor.minimap.enabled": true,
+    "git.enableSmartCommit": true,
+    "html.format.wrapLineLength": 40,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "explorer.confirmDragAndDrop": false,
+    "prettier.singleQuote": true,
+    "prettier.disableLanguages": [
+        "*.kt"
+    ],
+    "workbench.colorTheme": "Omni",
+    "todohighlight.keywords": [
+        "DEBUG:",
+        "REVIEW:",
+        {
+            "text": "NOTE:",
+            "color": "#ff0000",
+            "backgroundColor": "yellow",
+            "overviewRulerColor": "grey"
+        },
+        {
+            "text": "WARNING:",
+            // "color": "#000",
+            "isWholeLine": true,
+            "color": "yellow",
+            "border": "1px solid yellow",
+            "borderRadius": "2px", // using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0,0,0,.2)",
+        }
+    ],
+    "git.confirmSync": false,
+    //? Material Icons
+    "material-icon-theme.files.associations": {
+        ".env": "Key",
+        ".env-sample": "Lock",
+        "tsconfig.json": "typescript",
+        ".lintstagedrc": "Eslint",
+        ".lintstagedrc.json": "Settings",
+    },
+    "material-icon-theme.folders.associations": {
+        // https://youtu.be/vAV4Vy4jfkc?t=1056
+        "entities": "class",
+        "domain": "class",
+        "schemas": "class",
+        "useCases": "controller",
+        "repositories": "mappings",
+        "providers": "include",
+        "implementations": "core"
+    },
+    "files.associations": {
+        ".lintstagedrc": "json",
+        ".eslintrc.json": "json",
+        "*.json": "json"
+    },
+    "window.zoomLevel": 3,
+    "elixirLS.dialyzerEnabled": false,
+    "elixirLS.suggestSpecs": false
+}
