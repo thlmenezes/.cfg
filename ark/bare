@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+echo -ne "\nalias config='/usr/bin/git --git-dir=\$HOME/.cfg/ --work-tree=\$HOME'" >> ~/.zshrc
+source ~/.zshrc
+echo ".cfg" >> ~/.gitignore
+git clone --bare https://github.com/thlmenezes/.cfg.git $HOME/.cfg
+config config --local status.showUntrackedFiles no
