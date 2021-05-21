@@ -10,7 +10,7 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 fi
 ################################################################
 #
-#CUSTOM
+#CUSTOM ALIASES
 #
 ################################################################
 alias reload='source ~/.zshrc'
@@ -29,6 +29,11 @@ alias ggf='git fetch'
 # DOCKER
 alias docker_service='sudo systemctl start docker.service'
 alias docker_stop_all='docker container stop `docker container list -q` 2>/dev/null || echo "No running containers"'
+################################################################
+#
+#PATH MODS
+#
+################################################################
 # JAVA
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/
 # ANDROID
