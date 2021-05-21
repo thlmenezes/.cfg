@@ -98,7 +98,7 @@
         ".eslintrc.json": "json",
         "*.json": "json"
     },
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 2,
     "elixirLS.dialyzerEnabled": false,
     "elixirLS.suggestSpecs": false
 }

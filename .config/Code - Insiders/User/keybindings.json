@@ -9,7 +9,7 @@
       "command": "workbench.action.terminal.new"
   },
   {
-      "key": "ctrl+alt+k",
+      "key": "ctrl+k",
       "command": "workbench.action.terminal.kill"
   },
   {
