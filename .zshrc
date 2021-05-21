@@ -16,6 +16,7 @@ fi
 alias reload='source ~/.zshrc'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias code='code-insiders'
+alias whoamip="ip address | grep 'inet 192' | awk '{ print \$2 }'"
 # ANDROID EMULATOR
 alias emuload='function _emu(){ emulator @$1 -no-boot-anim -noaudio -no-snapshot-save; }; _emu'
 # GIT
