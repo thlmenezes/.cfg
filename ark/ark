@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#--------------------------------------------
+# FUNCTIONS
+#--------------------------------------------
+getYay(){
+    sudo pacman -Sqyyu --needed --noconfirm
+    sudo pacman -Sq yay --needed --noconfirm
+    exit 0
+}
+
+check(){
+    pacman -Qs $1 > /dev/null 2>&1
+}
+
+fetch(){
+    yay -Sq $1 --needed --noconfirm
+}
+#--------------------------------------------
+# MAIN
+#--------------------------------------------
+check yay || getYay
+
+for pkg in $@
+do
+    check $pkg || fetch $pkg
+done
