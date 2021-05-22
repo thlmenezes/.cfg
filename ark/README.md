@@ -1,10 +1,10 @@
 # NOAH' ark
 
 - [Android Studio IDE](https://developer.android.com/studio/)
-    - unzip
+    - unzip compressed install files
     - move android-studio folder to /opt/android-studio
-    - [optional] customize ark/studio.desktop
-    - run `sudo ./studio`
+    - [optional] customize studio.desktop
+    - run `./studio`
 
 - [ASDF version manager](https://asdf-vm.com/#/core-manage-asdf)
 
