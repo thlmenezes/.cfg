@@ -32,16 +32,18 @@ config push
 Ark is a folder that contains setup scripts for the clean manjaro linux install, downloading my commonly used apps and code extensions
 
 ```
-chmod +x bare
 ./bare
 ```
 
 ```
-chmod +x ark
 ./ark `cat programs`
 ```
 
 ```
-chmod +x code_ext
 ./code_ext `cat extensions`
+```
+
+```
+./studio
+# requires file studio.desktop
 ```

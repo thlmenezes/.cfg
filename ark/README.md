@@ -3,24 +3,8 @@
 - [Android Studio IDE](https://developer.android.com/studio/)
     - unzip
     - move android-studio folder to /opt/android-studio
-    - create symbolic link to binaries folder
-    ```
-    sudo ln -s /opt/android-studio/bin/studio.sh /bin/android-studio
-    ```
-    - create studio.desktop file with the content below
-    ```
-    [Desktop Entry]
-    Type=Application
-    Encoding=UTF-8
-    Name=Android Studio
-    Comment=Android Studio provides the fastest tools for building apps on every type of Android device.
-    Exec=/usr/bin/android-studio
-    Icon=studio
-    ```
-    - create symbolic link to aplications folder
-    ```
-    sudo ln -s /opt/android-studio/bin/studio.desktop /usr/share/applications/android-studio.desktop
-    ```
+    - [optional] customize ark/studio.desktop
+    - run `sudo ./studio`
 
 - [ASDF version manager](https://asdf-vm.com/#/core-manage-asdf)
 

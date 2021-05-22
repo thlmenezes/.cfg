@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [ $EUID -ne 0 ]
+then
+  echo -e "\033[1;31mRun script as root\033[0m" >&2
+  exit 1
+fi
+
+STUDIO_HOME=/opt/android-studio/bin
+
+ln -s $STUDIO_HOME/studio.sh /bin/android-studio
+cp studio.desktop $STUDIO_HOME/studio.desktop
+ln -s $STUDIO_HOME/studio.desktop /usr/share/applications/android-studio.desktop
+
