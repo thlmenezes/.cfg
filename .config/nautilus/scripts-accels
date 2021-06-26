@@ -1,0 +1,3 @@
+; Example Keybinds
+; Modifiers: <Control> <Alt> <Shift>
+F12 open-terminal-here
