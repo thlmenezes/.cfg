@@ -73,3 +73,9 @@
     - [simplescreenrecorder](https://www.maartenbaert.be/simplescreenrecorder/)
 
 - [VSCode Insiders](https://code.visualstudio.com/insiders/)
+
+    Create Symbolic link to command `code`
+
+    ```bash
+    sudo ln -s $(which code-insiders) /usr/bin/code
+    ```
