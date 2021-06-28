@@ -16,3 +16,5 @@ jdk11-openjdk
 android-tools
 spotify
 python-nautilus
+bluez-utils
+python-pybluez

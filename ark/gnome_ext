@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# Install Gnome Shell Extensions
+
+EXTENSION_DIR="~/.local/share/gnome-shell/extensions"
+
+move_extension(){
+    rm -rf $EXTENSION_DIR/$1
+    mkdir -p $EXTENSION_DIR
+    cp -r $1 $EXTENSION_DIR
+    rm -rf $1
+    echo "$1 installed"
+}
+
+download_zipped() {
+	ZIPPED=$1.zip
+    wget --show-progress -q -O $ZIPPED $2
+    unzip -qq $ZIPPED -d $1 
+    rm -rf $ZIPPED
+}
+
+install_extension() {
+	download_zipped $1 $2
+	move_extension $1
+}
+
+read -ra inputs <<< "$@"
+
+for ((i = 0 ; i < $# ; i+= 2)); do
+	install_extension ${inputs[$i]} ${inputs[$i+1]}
+done

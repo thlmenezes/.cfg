@@ -40,7 +40,11 @@ Ark is a folder that contains setup scripts for the clean manjaro linux install,
 ```
 
 ```
-./code_ext `cat extensions`
+./code_ext `cat code-extensions`
+```
+
+```
+./gnome_ext `cat gnome-extensions`
 ```
 
 ```
