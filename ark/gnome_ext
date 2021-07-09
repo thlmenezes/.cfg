@@ -2,7 +2,7 @@
 
 # Install Gnome Shell Extensions
 
-EXTENSION_DIR="~/.local/share/gnome-shell/extensions"
+EXTENSION_DIR="$HOME/.local/share/gnome-shell/extensions"
 
 move_extension(){
     rm -rf $EXTENSION_DIR/$1
