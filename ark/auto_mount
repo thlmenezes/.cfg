@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# SOURCE: https://www.techrepublic.com/article/how-to-properly-automount-a-drive-in-ubuntu-linux/
+
+if [ $EUID -ne 0 ]
+then
+  echo -e "\033[1;31mRun script as root\033[0m" >&2
+  exit 1
+fi
+
+if [ $# -ne 3 ]
+then
+  echo -e "\033[1;31mIllegal number of parameters\033[0m" >&2
+  echo -e "\033[1;31mExpected 3 args:\n\t- partition location (e.g. /dev/sda1)\n\t- \$USER -> username\n\t- \$HOME -> home folder location\033[0m" >&2
+  [[ $# -lt 1 ]] && fdisk -l
+  exit 1
+fi
+
+[[ `blkid | grep $1 | awk '{print $2}'` =~ \"(.*?)\" ]]
+DISKPART_LABEL=${BASH_REMATCH[1]}
+GROUP_NAME=${DISKPART_LABEL,,}
+[[ `blkid | grep $1 | awk '{print $4}'` =~ \"(.*?)\" ]]
+DISKPART_UUID=${BASH_REMATCH[1]}
+
+if [ `grep -c "UUID=$DISKPART_UUID" /etc/fstab` -ne 0 ]
+then
+  echo -e "\033[1;31mPartition already added\033[0m"
+  exit 1
+fi
+
+udisksctl unmount -b $1 > /dev/null 2>&1 || true
+
+BASE_DIR=/mnt/ark
+MOUNT_DIR=$BASE_DIR/$GROUP_NAME
+
+rm $MOUNT_DIR > /dev/null 2>&1 || true
+mkdir -p $MOUNT_DIR
+
+groupdel $GROUP_NAME > /dev/null 2>&1 || true
+groupadd $GROUP_NAME
+usermod -aG $GROUP_NAME $2
+chown -R :$GROUP_NAME $MOUNT_DIR
+
+echo "UUID=$DISKPART_UUID $MOUNT_DIR    auto nosuid,nodev,nofail,x-gvfs-show 0 0" >> /etc/fstab
+
+mount -a
+
+rm ${3:-.}/$DISKPART_LABEL > /dev/null 2>&1 || true
+ln -s $MOUNT_DIR ${3:-.}/$DISKPART_LABEL
