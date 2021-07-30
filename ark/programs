@@ -1,3 +1,6 @@
+#---------------------------------
+# BASIC
+#---------------------------------
 git
 zsh
 docker
@@ -8,16 +11,38 @@ slack-desktop
 telegram-desktop
 whatsapp-nativefier-dark
 discord
+spotify
+#---------------------------------
+# Python IDLE GUI fix
+#---------------------------------
 python-pmw
+#---------------------------------
+# Disk Analyser
+#---------------------------------
 baobab
+#---------------------------------
+# AV Recording
+#---------------------------------
 obs-studio
 simplescreenrecorder
+#---------------------------------
+# Mobile Development
+#---------------------------------
 jdk11-openjdk
 android-tools
-spotify
+#---------------------------------
+# 'Open Code Here' dependency
+#---------------------------------
 python-nautilus
+#---------------------------------
+# Gnome Shell Extensions
+# Bluetooth dependencies
+#---------------------------------
 bluez-utils
 python-pybluez
+#---------------------------------
+# SDL dependencies
+#---------------------------------
 sdl2
 sdl2_image
 sdl2_mixer

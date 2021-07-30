@@ -36,7 +36,7 @@ Ark is a folder that contains setup scripts for the clean manjaro linux install,
 ```
 
 ```
-./ark `cat programs`
+./ark `grep -v '^#' programs`
 ```
 
 ```
