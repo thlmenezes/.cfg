@@ -29,6 +29,7 @@ simplescreenrecorder
 # Mobile Development
 #---------------------------------
 jdk11-openjdk
+jdk8-openjdk
 android-tools
 #---------------------------------
 # 'Open Code Here' dependency
