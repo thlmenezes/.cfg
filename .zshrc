@@ -50,6 +50,7 @@ alias docker_stop_all='docker container stop `docker container list -q` 2>/dev/n
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/
 # ANDROID
 export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_NDK_HOME=$ANDROID_HOME/ndk/23.0.7599858
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
