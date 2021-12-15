@@ -22,20 +22,27 @@
     //* Style
     "editor.tabSize": 2,
     //* Languages
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "editor.formatOnSave": true
+    },
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.formatOnSave": true
     },
     "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.formatOnSave": true
     },
     "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.formatOnSave": true
     },
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.formatOnSave": true
     },
     //? Emmet
@@ -100,5 +107,8 @@
     },
     "window.zoomLevel": 3,
     "elixirLS.dialyzerEnabled": false,
-    "elixirLS.suggestSpecs": false
+    "elixirLS.suggestSpecs": false,
+    "eslint.format.enable": true,
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": true
 }
