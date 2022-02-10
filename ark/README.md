@@ -33,6 +33,16 @@
 
     There's a AppImage option on GitHub
 
+- [Logind](https://www.man7.org/linux/man-pages/man5/logind.conf.5.html)
+
+    Disable lid close sleep behaviour
+
+    ```bash
+    echo -e "
+    HandleLidSwitch=ignore
+    HandleLidSwitchDocked=ignore" >> /etc/systemd/logind.conf
+    ```
+
 - [Noto Emoji](https://github.com/googlefonts/noto-emoji)
 
     AUR package to enable emojis
