@@ -105,10 +105,12 @@
         ".eslintrc.json": "json",
         "*.json": "json"
     },
-    "window.zoomLevel": 3,
     "elixirLS.dialyzerEnabled": false,
     "elixirLS.suggestSpecs": false,
     "eslint.format.enable": true,
     "editor.cursorBlinking": "phase",
-    "editor.cursorSmoothCaretAnimation": true
+    "editor.cursorSmoothCaretAnimation": true,
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "errorLens.statusBarMessageEnabled": true,
+    "window.zoomLevel": 3
 }
