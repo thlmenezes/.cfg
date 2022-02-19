@@ -1,6 +1,6 @@
 {
     //? General
-    "extensions.showRecommendationsOnlyOnDemand": true,
+    // "extensions.showRecommendationsOnlyOnDemand": true,
     "explorer.openEditors.visible": 0,
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
@@ -25,7 +25,7 @@
     "[typescript]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.codeActionsOnSave": {
-          "source.fixAll.eslint": true
+            "source.fixAll.eslint": true
         },
         "editor.formatOnSave": true
     },
@@ -112,5 +112,6 @@
     "editor.cursorSmoothCaretAnimation": true,
     "typescript.updateImportsOnFileMove.enabled": "never",
     "errorLens.statusBarMessageEnabled": true,
-    "window.zoomLevel": 3
+    "window.zoomLevel": 3,
+    "cSpell.language": "en,pt-BR"
 }
