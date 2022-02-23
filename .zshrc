@@ -39,6 +39,8 @@ alias gsf='git update-index --no-skip-worktree'
 alias gsw='git switch'
 alias gs='git stash'
 alias gsp='git stash pop'
+alias gdiff='function _gd(){ git --no-pager diff --output=${4:-diff.patch} $2 $3 -- ${1:-*}}; _gd'
+
 # DOCKER
 alias docker_service='sudo systemctl start docker.service'
 alias docker_stop_all='docker container stop `docker container list -q` 2>/dev/null || echo "No running containers"'
