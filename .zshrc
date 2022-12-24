@@ -16,6 +16,7 @@ fi
 alias reload='source ~/.zshrc'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias whoamip="ip address | grep 'inet 192' | awk '{ print \$2 }' | cut -d / -f 1"
+alias killp='function _killp(){ fuser -k $1/tcp; }; _killp'
 # ANDROID EMULATOR
 alias emuload='function _emu(){ emulator @$1 -no-boot-anim -noaudio -no-snapshot-save; }; _emu'
 # GIT
@@ -38,9 +39,10 @@ alias grn='git rebase --no-verify'
 alias gsf='git update-index --no-skip-worktree'
 alias gsw='git switch'
 alias gs='git stash'
+alias gss='git status --short'
 alias gsp='git stash pop'
 alias gdiff='function _gd(){ git --no-pager diff --output=${4:-diff.patch} $2 $3 -- ${1:-*}}; _gd'
-
+alias gcdir='git config --global --add safe.directory `pwd`'
 # DOCKER
 alias docker_service='sudo systemctl start docker.service'
 alias docker_stop_all='docker container stop `docker container list -q` 2>/dev/null || echo "No running containers"'
@@ -60,3 +62,5 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/build-tools/30.0.3/
 export PATH=$JAVA_HOME/bin/:$PATH
+
+. /opt/asdf-vm/asdf.sh
