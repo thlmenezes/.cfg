@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# NOTE: add x to print commands
+# readmore @ https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+
+print_help () {
+  # Display Help
+  echo -en "\033[1;30m"
+  echo "Script to reboot uvcvideo service"
+  echo
+  echo "Syntax: webcam-reboot [-h] [--help] [-r|m 'param string']"
+  echo "options:"
+  echo "r     rmmod params"
+  echo "m     modprobe params"
+  echo "h     print this message"
+  echo -e "\033[0m"
+}
+
+# main help matcher
+[[ "$@" =~ "-h" ]] && print_help && exit
+
+while getopts ":r:m:h" opt; do
+  case $opt in
+    r) rmargs="$OPTARG"
+    ;;
+    m) mpargs="$OPTARG"
+    ;;
+    # fallback help matcher
+    h) print_help
+    exit
+    ;;
+  esac
+done
+
+if [ $EUID -ne 0 ]
+then
+  echo -e "\033[1;31mRun script as root\033[0m" >&2
+  exit 1
+fi
+
+# SOURCE: https://digitizor.com/how-to-reload-ubuntu-linux-laptop-webcam-fix-without-restart/
+rmmod ${rmargs:-} uvcvideo || 0
+modprobe ${mpargs:-} uvcvideo && echo -e "\033[1;32mDone, get device from \`v4l2-ctl --list-devices\` and test \`ffplay <device>\`\033[0m"
