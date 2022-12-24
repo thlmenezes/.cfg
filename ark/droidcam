@@ -8,8 +8,8 @@ if [[ `lsmod | grep -q v4l2loopback_dc` -ne 0 ]]
 then
   echo -e "\033[1;31mv4l2loopback daemon not found, check linux-headers\033[0m" >&2
   sys_version=`uname -r | cut -d'.' -f1,2 | sed 's/\.//g'`
-  echo -e "Use command below and try again\n\tyay -S linux${sys_version}-headers gcc make usbmuxd v4l2loopback-dkms"
-  echo -e "Might need to reboot after if\n\t`uname -r`\nis NOT your expected kernel version"
+  echo -e "Use command below and try again\n\tyay -S linux${sys_version}-headers gcc make usbmuxd v4l2loopback-dkms" >&2
+  echo -e "Might need to reboot after if\n\t`uname -r`\nis NOT your expected kernel version" >&2
   exit 1
 fi
 
@@ -39,3 +39,5 @@ cd /tmp/droidcam && ./install-video
 
 # how avoid conflict with OBS virtual camera?
 # readmore @ https://github.com/obsproject/obs-studio/issues/3929#issuecomment-1118331263
+
+echo -e "\033[1;32mInstall Completed\ncheck https://dev47apps.com/obs/ for OBS Plugin\033[0m"
