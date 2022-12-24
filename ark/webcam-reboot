@@ -7,6 +7,7 @@ print_help () {
   # Display Help
   echo -en "\033[1;30m"
   echo "Script to reboot uvcvideo service"
+  echo "solution source: https://digitizor.com/how-to-reload-ubuntu-linux-laptop-webcam-fix-without-restart/"
   echo
   echo "Syntax: webcam-reboot [-h] [--help] [-r|m 'param string']"
   echo "options:"
@@ -38,6 +39,5 @@ then
   exit 1
 fi
 
-# SOURCE: https://digitizor.com/how-to-reload-ubuntu-linux-laptop-webcam-fix-without-restart/
 rmmod ${rmargs:-} uvcvideo || 0
 modprobe ${mpargs:-} uvcvideo && echo -e "\033[1;32mDone, get device from \`v4l2-ctl --list-devices\` and test \`ffplay <device>\`\033[0m"
