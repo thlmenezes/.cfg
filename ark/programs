@@ -25,6 +25,10 @@ baobab
 #---------------------------------
 obs-studio
 simplescreenrecorder
+# Droidcam Dependencies for iOS camera setup
+usbmuxd
+linux510-headers
+v4l2loopback-dkms
 #---------------------------------
 # Mobile Development
 #---------------------------------
