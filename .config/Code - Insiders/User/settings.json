@@ -34,7 +34,7 @@
         "editor.formatOnSave": true
     },
     "[json]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.defaultFormatter": "vscode.json-language-features",
         "editor.formatOnSave": true
     },
     "[css]": {
@@ -44,6 +44,9 @@
     "[html]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.formatOnSave": true
+    },
+    "[feature]": {
+        "editor.formatOnSave": false
     },
     //? Emmet
     "emmet.syntaxProfiles": {
@@ -61,7 +64,7 @@
     "prettier.disableLanguages": [
         "*.kt"
     ],
-    "workbench.colorTheme": "Omni",
+    "workbench.colorTheme": "poimandres",
     "todohighlight.keywords": [
         "DEBUG:",
         "REVIEW:",
@@ -112,6 +115,88 @@
     "editor.cursorSmoothCaretAnimation": true,
     "typescript.updateImportsOnFileMove.enabled": "never",
     "errorLens.statusBarMessageEnabled": true,
+    "cSpell.language": "en,pt-BR",
+    "security.workspace.trust.untrustedFiles": "open",
+    "pvs.path": "/mnt/ark/pessoal/CiC/LogicaComputacional_LC1/projetoRadixsortCard/projetoRadixsortCard/pvs-7.1.0",
+    "cSpell.userWords": [
+        "commitlint",
+        "commitzen",
+        "gitmoji",
+        "mmio",
+        "MMIO",
+        "rubocop"
+    ],
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "javascript.inlayHints.parameterNames.enabled": "literals",
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "typescript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.parameterNames.enabled": "literals",
+    "workbench.editor.centeredLayoutAutoResize": false,
     "window.zoomLevel": 3,
-    "cSpell.language": "en,pt-BR"
+    // Language Tool
+    "languageToolLinter.languageTool.language": "pt-BR",
+    "languageToolLinter.languageTool.motherTongue": "pt-BR",
+    "markdownlint.config": {
+        "no-inline-html": {
+            "allowed_elements": [
+                "div",
+                "s",
+                "a",
+                "details",
+                "summary",
+                "br",
+                "script"
+            ]
+        }
+    },
+    "languageToolLinter.languageTool.ignoredWordsInWorkspace": [
+        "prettier",
+        "javascript",
+        "expo",
+        "commit",
+        "commits",
+        "VSCode",
+        "lint",
+        "linter",
+        "linters",
+        "ctrl",
+        "git",
+        "push",
+        "request",
+        "husky",
+        "hook",
+        "hooks",
+        "lintStaged",
+        "stage",
+        "commitlint",
+        "commitzen",
+        "cz",
+        "branch",
+        "gitlab",
+        "deploy",
+        "deploys",
+        "mock",
+        "mocks",
+        "jsdoc",
+        "typescript",
+        "cypress",
+        "playwright",
+        "selenium",
+        "trunk",
+        "based",
+        "workflow",
+        "changelog",
+        "changelogs",
+        "rubocop",
+        "eslint",
+        "plugin",
+        "abcsize",
+        "metrics",
+        "CyclomaticComplexity",
+        "ruby",
+        "complexity"
+    ],
 }
