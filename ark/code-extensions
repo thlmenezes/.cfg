@@ -1,13 +1,58 @@
-wayou.vscode-todo-highlight
-usernamehw.errorlens
-Vtrois.gitmoji-vscode
-ms-vsliveshare.vsliveshare
-dbaeumer.vscode-eslint
-naumovs.color-highlight
-PKief.material-icon-theme
-medo64.render-crlf
-ms-azuretools.vscode-docker
+#
+#-----------------------------------------------------------------------------
+# Ortografia e Linguagem
+#-----------------------------------------------------------------------------
+#
+streetsidesoftware.code-spell-checker
+streetsidesoftware.code-spell-checker-portuguese-brazilian
 ms-ceintl.vscode-language-pack-pt-br
+#
+#-----------------------------------------------------------------------------
+# Informações Extras na Tela
+#-----------------------------------------------------------------------------
+#
+naumovs.color-highlight
+usernamehw.errorlens
+medo64.render-crlf
+wayou.vscode-todo-highlight
+#
+#-----------------------------------------------------------------------------
+# Filtros (Linters)
+#-----------------------------------------------------------------------------
+#
+dbaeumer.vscode-eslint
+DavidAnson.vscode-markdownlint
+esbenp.prettier-vscode
+tlahmann.alex-linter
+davidlday.languagetool-linter
+# NOTE: language tool linter needs server running
+# `docker run --rm -d -p 8081:8010 silviof/docker-languagetool`
+#
+#-----------------------------------------------------------------------------
+# Versionamento
+#-----------------------------------------------------------------------------
+# 
 mhutchie.git-graph
-formulahendry.code-runner
-rocketseat.theme-omni
+seatonjiang.gitmoji-vscode
+#
+#-----------------------------------------------------------------------------
+# Colaboração
+#-----------------------------------------------------------------------------
+#
+ms-vsliveshare.vsliveshare
+#
+#-----------------------------------------------------------------------------
+# Visual do Editor
+#-----------------------------------------------------------------------------
+#
+PKief.material-icon-theme
+pmndrs.pmndrs
+#
+#-----------------------------------------------------------------------------
+# InteliSense
+#-----------------------------------------------------------------------------
+#
+prisma.prisma
+bradlc.vscode-tailwindcss
+astro-build.astro-vscode
+alexkrechik.cucumberautocomplete

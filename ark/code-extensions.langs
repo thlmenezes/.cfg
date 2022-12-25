@@ -6,7 +6,19 @@ aki77.rails-db-schema
 bung87.rails
 dawhite.mustache
 kaiwood.endwise
-# Prisma
-prisma.prisma
+sianglim.slim
 # C/C++
 ms-vscode.cpptools
+# Python
+donjayamanne.python-environment-manager
+donjayamanne.python-extension-pack
+KevinRose.vsc-python-indent
+ms-python.isort
+ms-python.python
+njpwerner.autodocstring
+# Flex (Compiladores)
+luniclynx.lex
+# MJML (Email templates)
+mjmlio.vscode-mjml
+# HTML
+ritwickdey.LiveServer
