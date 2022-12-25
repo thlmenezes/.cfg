@@ -112,7 +112,7 @@
     "elixirLS.suggestSpecs": false,
     "eslint.format.enable": true,
     "editor.cursorBlinking": "phase",
-    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSmoothCaretAnimation": "on",
     "typescript.updateImportsOnFileMove.enabled": "never",
     "errorLens.statusBarMessageEnabled": true,
     "cSpell.language": "en,pt-BR",
@@ -199,4 +199,6 @@
         "ruby",
         "complexity"
     ],
+    "gitmoji.outputType": "emoji",
+    "gitmoji.showEmojiCode": true
 }
