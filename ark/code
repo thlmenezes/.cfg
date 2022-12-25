@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# :wip: notice
+echo -e "\033[1;31m🚧 unfinished script\033[0m" >&2
+exit 1
+
+# begin
+set -euo pipefail
+# NOTE: add x to print commands
+# readmore @ https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+
+# RUN AS ROOT
+if [ $EUID -ne 0 ]
+then
+  echo -e "\033[1;31mRun script as root\033[0m" >&2
+  exit 1
+fi
+
+# Uninstall previous version
+#rm -rf \
+#  /usr/share/discord\
+#  /bin/discord \
+#  /usr/share/applications/discord.desktop
+echo "No uninstall script found"
+
+# download latest version
+curl -L \
+  --progress-bar \
+  --request GET \
+  --url 'https://code.visualstudio.com/sha/download?build=insider&os=linux-x64' \
+  --output /tmp/code-insiders.tar.gz
+
+# install
+tar -xf /tmp/code-insiders.tar.gz
+
+# cp -r Discord /usr/share/discord
+
+# ln -s /usr/share/discord/Discord /bin/discord
+# ln -s /usr/share/discord/discord.desktop /usr/share/applications/discord.desktop
+
+echo -e "\033[1;32mInstall Completed\033[0m"
