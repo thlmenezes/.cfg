@@ -13,6 +13,10 @@ whatsapp-nativefier-dark
 discord
 spotify
 #---------------------------------
+# System Info PrettyPrint
+#---------------------------------
+neofetch
+#---------------------------------
 # Python IDLE GUI fix
 #---------------------------------
 python-pmw
