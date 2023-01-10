@@ -93,3 +93,17 @@
   ```bash
   sudo ln -s $(which code-insiders) /usr/bin/code
   ```
+
+- Automate setup for my stream apps audio sources
+
+  ```bash
+  mkdir -p ~/.config/pulse/
+  ln -s ~/ark/default.pa ~/.config/pulse/default.pa
+  ```
+
+  > to unload modules use the owner module ID, use `pactl list sinks` to check
+
+  Sources:
+  - [OBS Forum: Include/Exclude audio sources using pulseaudio](https://obsproject.com/forum/resources/include-exclude-audio-sources-using-pulseaudio-linux.95/)
+  - [PulseAudioDocs: Modules](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/)
+  - [ArchWiki: PulseAudio examples](https://wiki.archlinux.org/title/PulseAudio/Examples)

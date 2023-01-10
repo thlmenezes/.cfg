@@ -1,0 +1,16 @@
+#!/usr/bin/env pulseaudio -nF
+# 
+# Automate setup for my stream apps audio sources
+# Sources:
+# https://obsproject.com/forum/resources/include-exclude-audio-sources-using-pulseaudio-linux.95/
+# https://wiki.archlinux.org/title/PulseAudio/Examples
+# https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-null-sink
+.include /etc/pulse/default.pa
+
+load-module module-null-sink sink_name=spotify sink_properties=device.description=Spotify
+load-module module-null-sink sink_name=discord sink_properties=device.description=Discord
+load-module module-null-sink sink_name=misc sink_properties=device.description=Miscellaneous
+
+load-module module-combine-sink sink_name=spotify_monitor slaves=spotify,@DEFAULT_SINK@
+load-module module-combine-sink sink_name=discord_monitor slaves=discord,@DEFAULT_SINK@
+load-module module-combine-sink sink_name=misc_monitor slaves=misc,@DEFAULT_SINK@
