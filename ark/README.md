@@ -107,3 +107,12 @@
   - [OBS Forum: Include/Exclude audio sources using pulseaudio](https://obsproject.com/forum/resources/include-exclude-audio-sources-using-pulseaudio-linux.95/)
   - [PulseAudioDocs: Modules](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/)
   - [ArchWiki: PulseAudio examples](https://wiki.archlinux.org/title/PulseAudio/Examples)
+
+- [Micro Editor](https://micro-editor.github.io/)
+  - plugins:
+    - `filemanager`: Equivalente ao explorador
+    - `quoter`: envolve seleção de texto com parêntesis, aspas, ...
+    - `misspell`: verifica ortografia
+    - `manipulator`: manipulação de texto com maiúsculas, minúsculas, primeira maiúscula
+    - `fzf`: buscador de arquivos
+      - TODO: respeitar .gitignore <https://github.com/junegunn/fzf/issues/1625>

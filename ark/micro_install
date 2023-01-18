@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# RUN AS ROOT
+if [ $EUID -ne 0 ]
+then
+  echo -e "\033[1;31mRun script as root\033[0m" >&2
+  exit 1
+fi
+
+curl https://getmic.ro | bash
+
+mv micro /bin/micro
