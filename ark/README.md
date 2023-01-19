@@ -116,3 +116,21 @@
     - `manipulator`: manipulação de texto com maiúsculas, minúsculas, primeira maiúscula
     - `fzf`: buscador de arquivos
       - TODO: respeitar .gitignore <https://github.com/junegunn/fzf/issues/1625>
+
+- [AstroNvim](https://astronvim.com/)
+  ```bash
+  # TODO: avoid clone, conflicts with .cfg
+  git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+  # apply `astro_diff.patch` to `~/.config/nvim`
+  nvim
+  ```
+  - on nvim command use:
+  1. `:PackerInstall` to install `vim-prisma`
+  1. `:Mason` select using `i` to install the following:
+    ✓ eslint-lsp
+    ✓ eslint_d
+    ✓ prettier
+    ✓ prisma-language-server
+    ✓ tailwindcss-language-server
+    ✓ typescript-language-server
+  1. `:LspInstall tailwindcss`
