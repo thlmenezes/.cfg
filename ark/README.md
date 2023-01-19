@@ -134,3 +134,30 @@
     ✓ tailwindcss-language-server
     ✓ typescript-language-server
   1. `:LspInstall tailwindcss`
+
+- Git SSH config
+
+```bash
+ssh-keygen -t ed25519 -C "thlmenezes@pm.me"
+# set passphrase for extra security
+cat ~/.ssh/id_ed25519.pub
+# copy output and add ssh key to github settings
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+# update default ssh configs
+micro ~/.ssh/config
+# after all the steps, it should work
+ssh -T git@github.com
+# and remember to update remote urls to ssh
+# git remote set-url origin git@github.com:<user>/<repo>.git
+```
+
+```txt
+# ~/.ssh/config
+Host github.com
+Hostname ssh.github.com
+Port 443
+User git
+```
+
+Read more @ [GithubDocs: SSH](https://docs.github.com/pt/authentication/connecting-to-github-with-ssh) e [Troubleshooting](https://docs.github.com/pt/authentication/troubleshooting-ssh)
