@@ -11,22 +11,24 @@ fi
 curl -L \
   --progress-bar \
   --request GET \
-  --url 'https://discord.com/api/download?platform=linux&format=tar.gz' \
+  --url 'https://discord.com/api/download/canary?platform=linux&format=tar.gz' \
   --output discord.tar.gz
 
 # CLEAR OLD INSTALLATION
 rm -rf \
-  /usr/share/discord\
+  /usr/share/discord-canary\
   /bin/discord \
-  /usr/share/applications/discord.desktop
+  /bin/discord-canary \
+  /usr/share/applications/discord-canary.desktop
 
 # INSTALL
 tar -xf discord.tar.gz
 
-cp -r Discord /usr/share/discord
+cp -r DiscordCanary /usr/share/discord-canary
 
-ln -s /usr/share/discord/Discord /bin/discord
-ln -s /usr/share/discord/discord.desktop /usr/share/applications/discord.desktop
+ln -s /usr/share/discord-canary/DiscordCanary /bin/discord
+ln -s /usr/share/discord-canary/DiscordCanary /bin/discord-canary
+ln -s /usr/share/discord-canary/discord-canary.desktop /usr/share/applications/discord-canary.desktop
 
 # CLEANUP
-rm -rf Discord discord.tar.gz
+rm -rf DiscordCanary discord.tar.gz
