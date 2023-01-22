@@ -22,17 +22,17 @@
     //* Style
     "editor.tabSize": 2,
     //* Languages
-    "[typescript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true
-        },
-        "editor.formatOnSave": true
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-        "editor.formatOnSave": true
-    },
+    // "[typescript]": {
+    //     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    //     "editor.codeActionsOnSave": {
+    //         "source.fixAll.eslint": true
+    //     },
+    //     "editor.formatOnSave": true
+    // },
+    // "[javascript]": {
+    //     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    //     "editor.formatOnSave": true
+    // },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features",
         "editor.formatOnSave": true
@@ -64,7 +64,7 @@
     "prettier.disableLanguages": [
         "*.kt"
     ],
-    "workbench.colorTheme": "poimandres",
+    "workbench.colorTheme": "poimandres-storm",
     "todohighlight.keywords": [
         "DEBUG:",
         "REVIEW:",
@@ -200,5 +200,11 @@
         "complexity"
     ],
     "gitmoji.outputType": "emoji",
-    "gitmoji.showEmojiCode": true
+    "gitmoji.showEmojiCode": true,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "vscode-pets.throwBallWithMouse": true,
+    "vscode-pets.theme": "castle",
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    }
 }
