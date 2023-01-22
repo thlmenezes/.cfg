@@ -4,13 +4,12 @@
 git
 zsh
 docker
-visual-studio-code-insiders-bin
-brave
+#visual-studio-code-insiders-bin
+#brave
 insomnia
-slack-desktop
+#slack-desktop
 telegram-desktop
-whatsapp-nativefier-dark
-discord
+whatsapp-nativefier
 spotify
 pavucontrol
 #---------------------------------
@@ -28,8 +27,9 @@ baobab
 #---------------------------------
 # AV Recording
 #---------------------------------
-obs-studio
-simplescreenrecorder
+#obs-studio
+#simplescreenrecorder
+obs-studio-tytan652
 # Droidcam Dependencies for iOS camera setup
 usbmuxd
 linux510-headers
@@ -43,21 +43,21 @@ android-tools
 #---------------------------------
 # 'Open Code Here' dependency
 #---------------------------------
-python-nautilus
+#python-nautilus
 #---------------------------------
 # Gnome Shell Extensions
 # Bluetooth dependencies
 #---------------------------------
-bluez-utils
-python-pybluez
+#bluez-utils
+#python-pybluez
 #---------------------------------
 # SDL dependencies
 #---------------------------------
-sdl2
-sdl2_image
-sdl2_mixer
-sdl2_ttf
+#sdl2
+#sdl2_image
+#sdl2_mixer
+#sdl2_ttf
 #---------------------------------
 # OpenGL drivers
 #---------------------------------
-mesa
+#mesa
