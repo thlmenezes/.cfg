@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Waterfox
+StartupWMClass=waterfox
+Comment=The sane way to browse the web.
+GenericName=Internet Browser
+Exec=/usr/share/waterfox/waterfox %U
+Icon=waterfox
+Type=Application
+Categories=Network;WebBrowser;
+Path=/usr/bin

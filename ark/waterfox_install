@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# RUN AS ROOT
+if [ $EUID -ne 0 ]
+then
+  echo -e "\033[1;31mRun script as root\033[0m" >&2
+  exit 1
+fi
+
+echo "Fetching latest release download url..."
+
+RELEASE_URL=`curl -s https://api.github.com/repos/WaterfoxCo/Waterfox/releases/latest | grep -o '"tarball_url": "[^"]*' | grep -o '[^"]*$'`
+
+LATEST_TAG=`echo "$RELEASE_URL"| rev | cut -f 1 -d '/' | rev`
+
+LATEST_URL="https://cdn1.waterfox.net/waterfox/releases/$LATEST_TAG/Linux_x86_64/waterfox-$LATEST_TAG.tar.bz2"
+
+echo $LATEST_URL
+
+# DOWNLOAD LATEST VERSION
+curl --progress-bar \
+  --output waterfox.tar.bz2 \
+  --url "$LATEST_URL"
+
+# CLEAR OLD INSTALLATION
+rm -rf \
+  /usr/share/waterfox\
+  /bin/waterfox \
+  /usr/share/applications/waterfox.desktop
+
+# INSTALL
+tar -xf waterfox.tar.bz2
+
+cp -r waterfox /usr/share/waterfox
+
+ln -s /usr/share/waterfox/waterfox /bin/waterfox
+ln -s /usr/share/waterfox/waterfox.desktop /usr/share/applications/waterfox.desktop
+
+# CLEANUP
+rm -rf waterfox waterfox.tar.bz2
+
+## Attempts to set desktop
+cp waterfox.desktop /usr/share/waterfox/waterfox.desktop || exit 0
