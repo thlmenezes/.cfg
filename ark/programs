@@ -4,13 +4,14 @@
 git
 zsh
 docker
+docker-compose
 #visual-studio-code-insiders-bin
 #brave
 insomnia
 #slack-desktop
 telegram-desktop
 whatsapp-nativefier
-spotify
+spotify-launcher
 pavucontrol
 #---------------------------------
 # System Info PrettyPrint
@@ -27,9 +28,8 @@ baobab
 #---------------------------------
 # AV Recording
 #---------------------------------
-#obs-studio
-#simplescreenrecorder
-obs-studio-tytan652
+obs-studio
+simplescreenrecorder
 # Droidcam Dependencies for iOS camera setup
 usbmuxd
 linux510-headers
