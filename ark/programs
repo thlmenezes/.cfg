@@ -29,7 +29,9 @@ baobab
 #---------------------------------
 # AV Recording
 #---------------------------------
-obs-studio
+pkg-config
+dh-autoreconf
+obs-studio-tytan652
 simplescreenrecorder
 # Droidcam Dependencies for iOS camera setup
 usbmuxd
