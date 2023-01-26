@@ -11,6 +11,8 @@ load-module module-null-sink sink_name=spotify sink_properties=device.descriptio
 load-module module-null-sink sink_name=discord sink_properties=device.description=Discord
 load-module module-null-sink sink_name=misc sink_properties=device.description=Miscellaneous
 
+set-default-sink alsa_output.pci-0000_00_1f.3.hdmi-stereo
+
 load-module module-combine-sink sink_name=spotify_monitor slaves=spotify,@DEFAULT_SINK@
 load-module module-combine-sink sink_name=discord_monitor slaves=discord,@DEFAULT_SINK@
 load-module module-combine-sink sink_name=misc_monitor slaves=misc,@DEFAULT_SINK@
