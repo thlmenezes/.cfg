@@ -438,16 +438,16 @@ vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm size=10 direction=horizontal<
 vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<cr>', { silent = true, desc = "ToggleTerm vertical split" })
 -- WIP
 -- TODO: copy to clipboard and grab relative path do not work yet
--- vim.api.nvim_create_user_command("CpAbsPath", function()
---     local path = vim.fn.expand("%:p")
---     vim.fn.setreg("+", path)
---     vim.notify('Copied "' .. path .. '" to the clipboard!')
--- end, {})
--- vim.api.nvim_create_user_command("CpRelPath", function()
---     local path = vim.fn.expand("%")
---     vim.fn.setreg("+", path)
---     vim.notify('Copied "' .. path .. '" to the clipboard!')
--- end, {})
+vim.api.nvim_create_user_command("CpAbsPath", function()
+    local path = vim.fn.expand("%")
+    vim.fn.setreg("+", path)
+    vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
+vim.api.nvim_create_user_command("CpRelPath", function()
+    local path = vim.fn.fnamemodify(vim.fn.expand("%"), ":~:.")
+    vim.fn.setreg("+", path)
+    vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
 -- https://stackoverflow.com/a/8585343
 vim.keymap.set('n', '<C-w>', '<cmd>bp<bar>sp<bar>bn<bar>bd<CR>', { silent = true })
 -- Diagnostic keymaps
@@ -592,7 +592,20 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
+vim.cmd [[
+  let g:clipboard = {
+  \   'name': 'xclip-xfce4-clipman',
+  \   'copy': {
+  \      '+': 'xclip -selection clipboard',
+  \      '*': 'xclip -selection clipboard',
+  \    },
+  \   'paste': {
+  \      '+': 'xclip -selection clipboard -o',
+  \      '*': 'xclip -selection clipboard -o',
+  \   },
+  \   'cache_enabled': 1,
+  \ }
+]]
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 

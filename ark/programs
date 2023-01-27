@@ -5,6 +5,7 @@ git
 zsh
 docker
 docker-compose
+xclip
 neovim
 #visual-studio-code-insiders-bin
 #brave
