@@ -11,6 +11,17 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require('packer').startup(function(use)
+  -- transparent
+  use {
+    "xiyaowong/nvim-transparent",
+    config = function ()
+      require("transparent").setup({
+        enable = true,
+        extra_groups = "all",
+        exclude = {"Visual"},
+      })
+    end
+  }
   -- toggle term
   use {
     "akinsho/toggleterm.nvim",
@@ -606,6 +617,7 @@ vim.cmd [[
   \   'cache_enabled': 1,
   \ }
 ]]
+vim.g.transparent_enabled = true
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
