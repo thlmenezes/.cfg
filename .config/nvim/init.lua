@@ -18,7 +18,7 @@ require('packer').startup(function(use)
       require("transparent").setup({
         enable = true,
         extra_groups = "all",
-        exclude = {"Visual"},
+        exclude = { "Visual", "PmenuSel" },
       })
     end
   }
