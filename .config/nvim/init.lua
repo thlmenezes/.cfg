@@ -23,9 +23,9 @@ require('packer').startup(function(use)
     "xiyaowong/nvim-transparent",
     config = function()
       require("transparent").setup({
-        enable = true,
-        extra_groups = "all",
-        exclude = { "Visual", "PmenuSel" },
+        -- enable = true,
+        extra_groups = { "all" },
+        exclude_groups = { "Visual", "PmenuSel" },
       })
     end
   }
