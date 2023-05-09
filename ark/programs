@@ -33,7 +33,7 @@ baobab
 #---------------------------------
 pkg-config
 dh-autoreconf
-obs-studio-tytan652
+#obs-studio-tytan652 # NOTE: use flatpack
 simplescreenrecorder
 # Droidcam Dependencies for iOS camera setup
 usbmuxd
