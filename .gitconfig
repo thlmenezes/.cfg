@@ -1,5 +1,5 @@
 [user]
-	email = thlmenezes@pm.me
+	email = thlmenezes.dev@gmail.com
 	name = Thales Menezes
 	signingkey = BE051A0C5409AF03
 [pull]
@@ -8,3 +8,7 @@
 	gpgsign = false
 [init]
 	defaultBranch = main
+[safe]
+	directory = *
+[push]
+	autoSetupRemote = true
