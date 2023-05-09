@@ -446,6 +446,7 @@ require('nvim-treesitter.configs').setup {
 -- Custom keymap
 vim.keymap.set('n', '<C-q>', vim.cmd.q)
 vim.keymap.set({ 'n', 'i' }, '<C-s>', vim.cmd.w)
+vim.keymap.set('n', '<C-_>', '<cmd>vsplit<cr>', { silent = true, desc = 'Control + / = split view vertically' })
 vim.keymap.set('n', '<C-b>', '<cmd>Neotree toggle<cr>', { silent = true })
 vim.keymap.set('n', '<C-e>', '<cmd>Neotree reveal<cr>', { silent = true })
 vim.keymap.set({ 'n', 't' }, "<C-'>", '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
@@ -455,6 +456,7 @@ vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm size=10 direction=horizontal<
   { silent = true, desc = "ToggleTerm horizontal split" })
 vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<cr>',
   { silent = true, desc = "ToggleTerm vertical split" })
+vim.keymap.set('n', '<leader>sv', '<cmd>source $MYVIMRC<cr>', { silent = true, desc = "reload VIM config" })
 -- WIP
 -- TODO: copy to clipboard and grab relative path do not work yet
 vim.api.nvim_create_user_command("CpAbsPath", function()
@@ -513,10 +515,11 @@ local on_attach = function(_, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
 
-  -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-    vim.lsp.buf.format()
-  end, { desc = 'Format current buffer with LSP' })
+  -- Create a command to format on save using LSP buffer
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    buffer = bufnr,
+    command = "lua vim.lsp.buf.format()",
+  })
 end
 
 -- Enable the following language servers
