@@ -11,6 +11,13 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require('packer').startup(function(use)
+  -- pretty fold
+  use {
+    'anuvyklack/pretty-fold.nvim',
+    config = function()
+      require('pretty-fold').setup()
+    end
+  }
   -- poimandres theme
   use {
     'olivercederborg/poimandres.nvim',
@@ -521,6 +528,12 @@ local on_attach = function(_, bufnr)
     command = "lua vim.lsp.buf.format()",
   })
 end
+
+-- Code Folding
+-- TODO: use another foldmethod if there's an available LSP
+vim.o.foldmethod = "indent"
+vim.o.foldnestmax = 9
+vim.o.foldlevel = 9
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
