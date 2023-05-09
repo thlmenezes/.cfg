@@ -21,7 +21,7 @@ require('packer').startup(function(use)
   -- transparent
   use {
     "xiyaowong/nvim-transparent",
-    config = function ()
+    config = function()
       require("transparent").setup({
         enable = true,
         extra_groups = "all",
@@ -52,7 +52,7 @@ require('packer').startup(function(use)
   -- dressing
   use {
     'stevearc/dressing.nvim',
-    config = function ()
+    config = function()
       require('dressing').setup({
         input = {
           default_prompt = "➤ ",
@@ -67,7 +67,7 @@ require('packer').startup(function(use)
   }
   -- autopairs
   use {
-	  "windwp/nvim-autopairs",
+    "windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup({
         check_ts = true,
@@ -110,7 +110,7 @@ require('packer').startup(function(use)
     'akinsho/bufferline.nvim',
     tag = "v3.*",
     requires = 'nvim-tree/nvim-web-devicons',
-    config = function ()
+    config = function()
       vim.opt.termguicolors = true
       require("bufferline").setup({
         options = {
@@ -136,7 +136,7 @@ require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
       'MunifTanjim/nui.nvim',
     },
-    config = function ()
+    config = function()
       -- Unless you are still migrating, remove the deprecated commands from v1.x
       vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
@@ -445,25 +445,27 @@ require('nvim-treesitter.configs').setup {
 }
 -- Custom keymap
 vim.keymap.set('n', '<C-q>', vim.cmd.q)
-vim.keymap.set({'n', 'i'}, '<C-s>', vim.cmd.w)
+vim.keymap.set({ 'n', 'i' }, '<C-s>', vim.cmd.w)
 vim.keymap.set('n', '<C-b>', '<cmd>Neotree toggle<cr>', { silent = true })
 vim.keymap.set('n', '<C-e>', '<cmd>Neotree reveal<cr>', { silent = true })
-vim.keymap.set({'n', 't'}, "<C-'>", '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
-vim.keymap.set({'n', 't'}, '<F7>', '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
+vim.keymap.set({ 'n', 't' }, "<C-'>", '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
+vim.keymap.set({ 'n', 't' }, '<F7>', '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
 vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { silent = true, desc = "ToggleTerm float" })
-vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm size=10 direction=horizontal<cr>', { silent = true, desc = "ToggleTerm horizontal split" })
-vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<cr>', { silent = true, desc = "ToggleTerm vertical split" })
+vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm size=10 direction=horizontal<cr>',
+  { silent = true, desc = "ToggleTerm horizontal split" })
+vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<cr>',
+  { silent = true, desc = "ToggleTerm vertical split" })
 -- WIP
 -- TODO: copy to clipboard and grab relative path do not work yet
 vim.api.nvim_create_user_command("CpAbsPath", function()
-    local path = vim.fn.expand("%")
-    vim.fn.setreg("+", path)
-    vim.notify('Copied "' .. path .. '" to the clipboard!')
+  local path = vim.fn.expand("%")
+  vim.fn.setreg("+", path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
 vim.api.nvim_create_user_command("CpRelPath", function()
-    local path = vim.fn.fnamemodify(vim.fn.expand("%"), ":~:.")
-    vim.fn.setreg("+", path)
-    vim.notify('Copied "' .. path .. '" to the clipboard!')
+  local path = vim.fn.fnamemodify(vim.fn.expand("%"), ":~:.")
+  vim.fn.setreg("+", path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
 -- https://stackoverflow.com/a/8585343
 vim.keymap.set('n', '<C-w>', '<cmd>bp<bar>sp<bar>bn<bar>bd<CR>', { silent = true })
@@ -626,4 +628,3 @@ vim.cmd [[
 vim.g.transparent_enabled = true
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-
