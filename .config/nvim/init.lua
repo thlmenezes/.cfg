@@ -451,6 +451,7 @@ require('nvim-treesitter.configs').setup {
   },
 }
 -- Custom keymap
+vim.keymap.set('n', '<leader>f', '<cmd>%!prettier --stdin-filepath %<cr>')
 vim.keymap.set('n', '<C-q>', vim.cmd.q)
 vim.keymap.set({ 'n', 'i' }, '<C-s>', vim.cmd.w)
 vim.keymap.set('n', '<C-_>', '<cmd>vsplit<cr>', { silent = true, desc = 'Control + / = split view vertically' })
@@ -464,8 +465,12 @@ vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm size=10 direction=horizontal<
 vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<cr>',
   { silent = true, desc = "ToggleTerm vertical split" })
 vim.keymap.set('n', '<leader>sv', '<cmd>source $MYVIMRC<cr>', { silent = true, desc = "reload VIM config" })
--- WIP
--- TODO: copy to clipboard and grab relative path do not work yet
+vim.api.nvim_create_user_command("DisableFormatOnSave", function()
+  vim.cmd.set 'eventignore=BufWritePre'
+end, {})
+vim.api.nvim_create_user_command("EnableFormatOnSave", function()
+  vim.cmd.set 'eventignore='
+end, {})
 vim.api.nvim_create_user_command("CpAbsPath", function()
   local path = vim.fn.expand("%")
   vim.fn.setreg("+", path)
@@ -526,6 +531,7 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_create_autocmd("BufWritePre", {
     buffer = bufnr,
     command = "lua vim.lsp.buf.format()",
+    -- command = "EslintFixAll",
   })
 end
 
