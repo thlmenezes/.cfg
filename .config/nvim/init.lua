@@ -527,13 +527,6 @@ local on_attach = function(_, bufnr)
   nmap('<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
-
-  -- Create a command to format on save using LSP buffer
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    buffer = bufnr,
-    command = "lua vim.lsp.buf.format()",
-    -- command = "EslintFixAll",
-  })
 end
 
 -- Code Folding
@@ -583,7 +576,18 @@ mason_lspconfig.setup_handlers {
   function(server_name)
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = function(_, bufnr)
+        on_attach(_, bufnr)
+        -- Create a command to format on save using LSP buffer
+        command = "lua vim.lsp.buf.format()"
+        if server_name == 'eslint' then
+          command = "EslintFixAll"
+        end
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          command = command
+        })
+      end,
       settings = servers[server_name],
     }
   end,
