@@ -64,3 +64,10 @@ export PATH=$PATH:$ANDROID_HOME/build-tools/30.0.3/
 export PATH=$JAVA_HOME/bin/:$PATH
 
 . /opt/asdf-vm/asdf.sh
+
+# bun completions
+[ -s "/home/thlmenezes/.bun/_bun" ] && source "/home/thlmenezes/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -11,6 +11,10 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require('packer').startup(function(use)
+  -- astro
+  use 'wuelnerdotexe/vim-astro'
+  -- wakatime
+  use 'wakatime/vim-wakatime'
   -- pretty fold
   use {
     'anuvyklack/pretty-fold.nvim',
@@ -124,7 +128,7 @@ require('packer').startup(function(use)
           offsets = {
             { filetype = "NvimTree", text = "", padding = 1 },
             { filetype = "neo-tree", text = "", padding = 1 },
-            { filetype = "Outline", text = "", padding = 1 },
+            { filetype = "Outline",  text = "", padding = 1 },
           },
           max_name_length = 14,
           max_prefix_length = 13,
@@ -191,7 +195,7 @@ require('packer').startup(function(use)
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
-      'j-hui/fidget.nvim',
+      { 'j-hui/fidget.nvim', tag = 'legacy' },
 
       -- Additional lua configuration, makes nvim stuff amazing
       'folke/neodev.nvim',
@@ -220,10 +224,10 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
-  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
+  use 'nvim-lualine/lualine.nvim'           -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
-  use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
-  use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+  use 'numToStr/Comment.nvim'               -- "gc" to comment visual regions/lines
+  use 'tpope/vim-sleuth'                    -- Detect tabstop and shiftwidth automatically
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
@@ -293,6 +297,7 @@ vim.wo.signcolumn = 'yes'
 -- Set colorscheme
 vim.o.termguicolors = true
 vim.cmd [[colorscheme poimandres]]
+vim.cmd [[let g:astro_typescript = 'enable']]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
