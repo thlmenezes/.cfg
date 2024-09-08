@@ -12,7 +12,12 @@
 	directory = *
 [push]
 	autoSetupRemote = true
+# set "nvim" as tool for merging
 [merge]
-	tool = vimdiff
-[mergetool "vimdiff"]
-	path = nvim
+	tool = nvim
+# automatically launch merge tool without displaying a prompt
+[mergetool]
+	prompt = false
+# define command which will be used when "nvim" is set as a merge tool
+[mergetool "nvim"]
+	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
