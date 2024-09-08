@@ -71,3 +71,10 @@ export PATH=$JAVA_HOME/bin/:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+. ~/.asdf/plugins/java/set-java-home.zsh
+
+# .NET
+export DOTNET_TOOLS="$HOME/.dotnet/tools"
+export PATH="$DOTNET_TOOLS:$PATH"
+export DOTNET_ROOT="/usr/share/dotnet"
