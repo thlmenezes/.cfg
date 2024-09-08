@@ -461,7 +461,7 @@ require('nvim-treesitter.configs').setup {
 }
 -- Custom keymap
 vim.keymap.set('n', '<leader>f',
-  '<cmd>%!yarn -s prettier --no-error-on-unmatched-pattern --ignore-unknown --loglevel error --stdin-filepath %<cr>')
+  '<cmd>%!yarn -s prettier --no-error-on-unmatched-pattern --ignore-unknown --log-level error --stdin-filepath %<cr>')
 vim.keymap.set('n', '<C-q>', vim.cmd.q)
 vim.keymap.set({ 'n', 'i' }, '<C-s>', vim.cmd.w)
 vim.keymap.set('n', '<C-_>', '<cmd>vsplit<cr>', { silent = true, desc = 'Control + / = split view vertically' })
