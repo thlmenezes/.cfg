@@ -588,14 +588,14 @@ mason_lspconfig.setup_handlers {
       on_attach = function(_, bufnr)
         on_attach(_, bufnr)
         -- Create a command to format on save using LSP buffer
-        command = "lua vim.lsp.buf.format()"
-        if server_name == 'eslint' then
-          command = "EslintFixAll"
-        end
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer = bufnr,
-          command = command
-        })
+        -- command = "lua vim.lsp.buf.format()"
+        -- if server_name == 'eslint' then
+        --   command = "EslintFixAll"
+        -- end
+        -- vim.api.nvim_create_autocmd("BufWritePre", {
+        --   buffer = bufnr,
+        --   command = command
+        -- })
       end,
       settings = servers[server_name],
     }
