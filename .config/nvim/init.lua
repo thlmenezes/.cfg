@@ -162,6 +162,7 @@ require('packer').startup(function(use)
           content_layout = "center",
         },
         window = {
+          position = "right",
           -- width = 30,
           mappings = {
             o = "open",
@@ -462,8 +463,8 @@ vim.keymap.set('n', '<leader>f',
 vim.keymap.set('n', '<C-q>', vim.cmd.q)
 vim.keymap.set({ 'n', 'i' }, '<C-s>', vim.cmd.w)
 vim.keymap.set('n', '<C-_>', '<cmd>vsplit<cr>', { silent = true, desc = 'Control + / = split view vertically' })
-vim.keymap.set('n', '<C-b>', '<cmd>Neotree toggle<cr>', { silent = true })
-vim.keymap.set('n', '<C-e>', '<cmd>Neotree reveal<cr>', { silent = true })
+vim.keymap.set('n', '<C-b>', '<cmd>Neotree toggle position=right<cr>', { silent = true })
+vim.keymap.set('n', '<C-e>', '<cmd>Neotree reveal position=right<cr>', { silent = true })
 vim.keymap.set({ 'n', 't' }, "<C-'>", '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
 vim.keymap.set({ 'n', 't' }, '<F7>', '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
 vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { silent = true, desc = "ToggleTerm float" })
