@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+# ERROR IF NOT RUNNING AS ROOT
+if [ $EUID -ne 0 ]
+then
+  echo -e "\033[1;31mRun script as root\033[0m" >&2
+  exit 1
+fi
+
+# DOWNLOAD LATEST VERSION FOLLOWING API REDIRECTS
+curl -L \
+  --progress-bar \
+  --fail \
+  --url 'https://github.com/zen-browser/desktop/releases/latest/download/zen.linux-generic.tar.bz2' \
+  --output zen.linux-generic.tar.bz2
+
+# BACKUP OLD INSTALLATION
+if [ $(which zen) -eq 0 ]
+then
+  TIMESTAMP=$(date -d "today" +"%Y-%m-%d-%H-%M")
+  ZEN_VERSION=$(zen --version | rev | cut -d ' ' -f 1 | rev)
+  mkdir -p /usr/share/.old-zen-browser/$TIMESTAMP/$ZEN_VERSION
+  rsync \
+    --compress \
+    --archive \
+    --progress \
+    /usr/share/zen/ \
+    /usr/share/.old-zen-browser/$TIMESTAMP/$ZEN_VERSION
+fi
+
+# INSTALL
+## UNPACK NEW VERSION
+tar -xf zen.linux-generic.tar.bz2
+
+## REMOVE OLD VERSION
+rm -rf /usr/share/zen 
+
+## COPY NEW VERSION
+cp -r zen /usr/share/zen
+
+## SYMLINK EXECUTABLE
+ln --symbolic --force /usr/share/zen/zen /bin/zen
+
+## CLEANUP
+rm -rf zen zen.linux-generic.tar.bz2
+
+# DESKTOP ENTRY
+## DOWNLOAD FROM OFFICIAL REPO
+curl -L \
+  --progress-bar \
+  --fail \
+  --url 'https://raw.githubusercontent.com/zen-browser/desktop/main/AppDir/zen.desktop' \
+  --output /usr/share/zen/zen.desktop
+
+## SYMLINK DESKTOP ENTRY
+ln --symbolic --force /usr/share/zen/zen.desktop /usr/share/applications/zen.desktop
+
+## ADD ZEN ICON TO PIXMAPS
+ln --symbolic --force /usr/share/zen/browser/chrome/icons/default/default128.png /usr/share/pixmaps/zen.png
