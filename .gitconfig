@@ -23,3 +23,6 @@
 	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [core]
 	editor = "nano"
+[diff "lockb"]
+	textconv = bun
+	binary = true
