@@ -1,21 +1,29 @@
 #---------------------------------
-# BASIC
+# Pre-requisites
 #---------------------------------
+base-devel
 git
 zsh
-docker
-docker-compose
-xclip
-neovim
-ripgrep
-#visual-studio-code-insiders-bin
-#brave
-insomnia
-#slack-desktop
-telegram-desktop
-whatsapp-nativefier
-spotify-launcher
+#---------------------------------
+# BASIC
+#---------------------------------
+asdf-vm
+#docker
+elecwhat-bin
+flameshot
+helium-browser-bin
+noto-fonts-emoji
 pavucontrol
+plank
+#slack-desktop
+#spotify-launcher
+stremio
+# https://stremio-addons.com/torrentio.html
+telegram-desktop
+timeshift
+tree
+xfce4-systemload-plugin
+zed
 #---------------------------------
 # System Info PrettyPrint
 #---------------------------------
@@ -23,28 +31,27 @@ neofetch
 #---------------------------------
 # Python IDLE GUI fix
 #---------------------------------
-python-pmw
+#python-pmw
 #---------------------------------
 # Disk Analyser
 #---------------------------------
-baobab
+#baobab
 #---------------------------------
 # AV Recording
 #---------------------------------
-pkg-config
-dh-autoreconf
-#obs-studio-tytan652 # NOTE: use flatpack
+#pkg-config
+#dh-autoreconf
 simplescreenrecorder
-# Droidcam Dependencies for iOS camera setup
-usbmuxd
-linux510-headers
-v4l2loopback-dkms
+## Droidcam Dependencies for iOS camera setup
+#usbmuxd
+#linux510-headers
+#v4l2loopback-dkms
 #---------------------------------
 # Mobile Development
 #---------------------------------
-jdk11-openjdk
-jdk8-openjdk
-android-tools
+#jdk11-openjdk
+#jdk8-openjdk
+#android-tools
 #---------------------------------
 # 'Open Code Here' dependency
 #---------------------------------
