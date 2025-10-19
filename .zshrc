@@ -78,3 +78,13 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export DOTNET_TOOLS="$HOME/.dotnet/tools"
 export PATH="$DOTNET_TOOLS:$PATH"
 export DOTNET_ROOT="/usr/share/dotnet"
+
+# pnpm
+export PNPM_HOME="/home/thlmenezes/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
